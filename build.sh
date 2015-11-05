@@ -24,6 +24,10 @@ for file in *.tex *.plt *.data *.eps *.png *jpg *.sty gen/*plt data/*.data tab/*
         fi
     fi
 done
+###
+mkdir .build/obrazki
+cp -r obrazki .build/
+###
 echo "OK"
 
 cd .build
