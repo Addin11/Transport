@@ -1,6 +1,6 @@
-
-\section{Model klasycznego gazu doskonałego}
-\subsection{Wstęp}
+\section{Metody Statystyczne w układach wielocząstkowych}
+\subsection{Model klasycznego gazu doskonałego}
+\subsubsection{Wstęp}
 Pamiętamy, że dynamiczę cząstek naładowanych w polu EM można obliczyć poprzez:
 \begin{itemize}
 \item rozwiązanie równania Newtona
@@ -8,15 +8,15 @@ Pamiętamy, że dynamiczę cząstek naładowanych w polu EM można obliczyć pop
 \end{itemize}
 Dla N cząstek powinniśmy rozwiązać N równań ruchu. Gdy $N\rightarrow\infty$, to problem staje się nieobliczeniowy (nie da się go obliczyć w skończonym czasie).\\
 Rozwiązanie tego problemu: użycie statystyki do obliczeń (fizyka statystyczna). Okazało się, że metody statystyczne poprawnie działają dla dużych układów. Cena za to: utrata jednoznaczności niektórych pojęć. Zysk: problem staje się obliczeniowy; przy okazji ujawniły się niektóre zależności statystyczne. 
-\subsection{Definicja}
+\subsubsection{Definicja}
 \begin{verse}\textbf{Df.} Klasycznym gazem doskonałym naz. układ cząstek punktowch, między którymi nie ma żadnego oddziaływania \end{verse}
 \begin{verse}\textbf{uw.} W df. na Wikipedii mamy jeszcze zawarte, że układ ten osiąga równowagę termodynamiczną natychmiast w wyniku zderzeń- to nie jest prawda. W defininicji klasycznego gazu doskonałego zakładamy brak zderzeń, czyli układ jest niestabilny termodynamicznie \end{verse}
-\subsection{Stała Schmidta}
+\subsubsection{Stała Schmidta}
 Stała Schmidta odpowiada na pytanie ile jest cząstek w $1 cm^3$ gazu w warunkach normalnych:
 \begin{equation}\text{STAŁA SCHMIDTA}=\frac{\text{L. AVOGADRO}}{\text{OBJĘTOŚĆ 1 MOLA GAZU}}\end{equation}
 czyli:
 \begin{equation}n_0=\frac{N_A}{V}=\frac{6.02214\cdot 10^{23} ~{1/mol}}{22413.19 ~cm^3/mol}=2.68678\cdot 10^{19} cm^{-3} \simeq 3\cdot 10^{19} \frac{\text{cząstek}}{cm^3}\end{equation}
-\subsection{Rozwiązanie równań ruchu metodą Hamiltona}
+\subsubsection{Rozwiązanie równań ruchu metodą Hamiltona}
 \begin{itemize}
 \item Funkcja Hamiltona:
 \begin{equation}H(\{\r_i\},\{\p_i\})=\sum_{i/1}^{N}\frac{p_i^2}{2m}\end{equation}
@@ -29,7 +29,7 @@ czyli:
 \begin{verse}\textbf{Wn.} Każda z N cząstek gazu doskonałego ewoluuje niezależnie od pozostałych\end{verse}
 \begin{verse}\textbf{Wn.} Pęd cząstki w tym gazie jest stały \end{verse}
 \end{itemize}
-\subsection{Cząsteczkowa przestrzeń fazowa $\mu$}
+\subsubsection{Cząsteczkowa przestrzeń fazowa $\mu$}
 \begin{verse}\textbf{Df.} Cząsteczkowa przestrzeń fazowa $\mu$ to przestrzeń 6-wymiarowa:\\
 \begin{center}dim[$\mu$]=6 \end{center}
 w której ruch wyznaczają 2 niezależne zmienne:\\
@@ -43,7 +43,7 @@ Czyli 1 punkt to jedna cząsteczka.
 \end{center}
 \textbf{Uw.} Cząstki nie mogą być ułożone na 1 linii równoległej do osi pędowej, bo wtedy byłyby w 1 punkcie przestrzennym.
 \end{verse}
-\subsection{Opis gruboziarnisty}
+\subsubsection{Opis gruboziarnisty}
 Problem: potrzeba 2N warunków brzegowych.
 Rozwiązanie: opis grupoziarnisty:\\
 Wybierzmy element objętości przestrzeni $\mu$ wokół punktu L o objętości $[|\Delta \r_l|]^3$:
@@ -59,7 +59,9 @@ przy czym wymiar elementu objętości jest rzędu długości, po której średni
 W kostce o takich rozmiarach liczba cząstek wynosi:
 \begin{equation}[|\Delta\r_L|]^3[n_0 cm^{-3}]=[10^{-5}cm]^3[3\cdot10^{19}cm^{-3}]=3\cdot 10^4 \text{cząstek}\nonumber\end{equation}
 Opis ten nazywamy opisem gruboziarnistym, ponieważ każdy element objętości dobieramy sobie dowolnie.
+
 \subsection{Funkcja rozkładu gęstości prawdopodobieństwa}
+\subsubsection{Definicja}
 Wprowadźmy funkcję pomocniczą:
 \begin{center}$\f$\end{center}
 Żądamy, by była ona klasy $C^0[\mu]$, czyli by była ciągła w przestrzeni $\mu$.
@@ -71,8 +73,9 @@ Umówmy się, że:
 \begin{cases} \sum_L f(\r_L,\p_L,t)\Delta\omega_L=\int d^3 r d^3 p\f \\ \int d^3r d^3p\f=N~\Rightarrow\text{f jest unormowana do liczby cząstek}\end{cases}
 \end{equation}
 Wówczas $\f$ jest \textbf{funkcją rozkładu gęstości prawdopodobieństwa}.
-\subsection{Równanie kinetyczne dla tej funkcji}
-\subsubsection{Wyprowadzenie równania kinetycznego}
+\subsubsection{Równanie kinetyczne dla tej funkcji}
+\begin{itemize}
+\item{Wyprowadzenie równania kinetycznego}\\
 Zauważmy, że:
 \begin{equation}f(\r,\p,t+dt)-\f \stackrel{\text{ciągłość f}, dt\rightarrow 0}{\simeq}\partial_t\f dt\end{equation}
 gdzie
@@ -93,7 +96,7 @@ Wiemy, że:
 Wówczas równanie (\ref{Rkinet}) ma postać:
 \begin{equation}\partial_t\f+\v(\p)\cdot\nab{r}\f=0\label{Rkinet2}\end{equation}
 Powyższe równanie to \textbf{równanie kinetyczne}.
-\subsubsection{Rozwiązanie równania kinetycznego}
+\item{Rozwiązanie równania kinetycznego}\\
 Postulujemy rozwiązanie tego równania:
 \begin{equation}\f=\Phi(\r-\v t,\p)\end{equation}
 gdzie $\Phi$ to dowolna funkcja klasy $C^0[\mu]$.\\
@@ -107,11 +110,13 @@ Wówczas kolejne części równania kinetycznego zyskują postać:
 Zatem równanie kinetyczne przyjmuje postać:
 \begin{equation}\{-\v\cdot\nab{s}+\v\cdot\nab{s}\}\tilde{\Phi}(\vec{s}(t),\p)=0\end{equation}
 Obie strony są równe, więc zaproponowana postać rozwiązania jest słuszna.
-\subsection{Momenty funkcji rozkładu gęstości prawdopodobieństwa}
-\subsubsection{Zerowy moment}
+\end{itemize}
+\subsubsection{Momenty funkcji rozkładu gęstości prawdopodobieństwa}
+\begin{itemize}
+\item {Zerowy moment}\\
 \begin{equation}\int d^3p\f=n\arg\end{equation}
 to zerowy moment funkcji rozkładu gęstości prawdpodobieństwa. Jest to jednocześnie rozkład brzegowy w przestrzeni położeniowej.
-\subsubsection{Pierwszy moment}
+\item {Pierwszy moment}\\
 Scałkujmy równanie kinetyczne (\ref{Rkinet2}) po pędzie:
 \begin{equation}\partial_t\f+\v(\p)\cdot\nab{r}\f=0~~~~~~/\int d^3 \p\nonumber \end {equation}
 \begin{equation}\partial_t n\arg+\int d^3\p ~\v(\p)\cdot\nab{r}\f=0 \nonumber\end{equation}
@@ -120,12 +125,14 @@ Pamiętamy, że wyszliśmy z hamiltonianu, w którym zmienne $\r,\p$ są niezale
 gdzie:
 \begin{equation}\vec{j}\arg=\int d^3\p~\v(\p)\f\end{equation}
 to pierwszy moemnt funkcji rozkładu gęstości prawdopodobieństwa. Jest on interpretowany jako prąd.
-\subsection{Interpretacja}
-\subsubsection{Równanie kinetyczne jako równanie ciągłości}
+\end{itemize}
+\subsubsection{Interpretacja}
+\begin{itemize}
+\item{Równanie kinetyczne jako równanie ciągłości}\\
 Równanie kinetyczne wyrażone przez momenty ma postać:
 \begin{equation}\partial_t n\arg+\nab{r}\j\arg=0\end{equation}
 W ten sposób nadaliśmy równaniu kinetycznemu strukturę \textbf{równania ciągłości} ("nic nie może zginąć").
-\subsubsection{Funkcja rozkładu gęstości prawdopodobieństwa wyrażona przez deltę Diraca}
+\item{Funkcja rozkładu gęstości prawdopodobieństwa wyrażona przez deltę Diraca}\\
 Z definicji:
 \begin{equation}\j\arg=\int d^3 p~\v(\p)\f\end{equation}
 Z drugiej strony, w teorii Lorentza założyliśmy, że prąd cząsteczkowy ma postać:
@@ -149,7 +156,7 @@ Ale:
 \begin{equation}\r_i(t)=\r_{i0}+\frac{1}{m}\p_{i0}t=\r_{i0}+\v_{i0}t\end{equation}
 zatem ostatecznie:
 \begin{equation}\f=\sum_{i/1}^N\delta(\r-[\r_{i0}+\v{i0}t])\delta(\p) \end{equation}
-\subsubsection{Interpretacja}
+\item{Interpretacja}\\
 \begin{center}
 \includegraphics[scale=0.75]{obrazki/przestrzen_fazowa3.png}
 \end{center}
@@ -157,5 +164,5 @@ Funkcja rozkładu gęstości prawdopodobieństwa przemieszcza się jako delta Di
 \begin{verse}\textbf{Wn. }Założyliśmy brak zderzeń i dostaliśmy to:
 \begin{center}\includegraphics[scale=0.75]{obrazki/przestrzen_fazowa4.png}\end{center}
 czyli prąd. \end{verse}
-
+\end{itemize}
 
