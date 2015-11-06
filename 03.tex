@@ -22,8 +22,14 @@ Rozwiązując równania Newtona otrzymujemy różne $\vec{r}(t)$.
 Oznaczmy przez $\{ \vec{r}(t) \}$ - zbiór rozwiązań równania Newtona
 $\equiv$ PRZESTRZEŃ KONFIGURACYJNA.
 
-RYSUNEK
-
+\begin{minipage}{0.5\textwidth}
+\includegraphics[width=\textwidth]{przestrzen_konfiguracyjna_newton.png}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+Wiele rozwiązań przechodzi \\
+przez położenie początkowe \\
+co powoduje \\ NIEJEDNOZNACZNOŚĆ \vspace{2.5cm}\\
+\end{minipage}
 
 $\left|\vec{r}(t)\right> $ - klasyczny stan cząstki w mechanice Newtona 
 niewystarczający ze względu na brak determinizmu.
@@ -130,4 +136,46 @@ $$=\nab{p}H\qpt \cdot \nab{q}H\qpt - \nab{q}H\qpt \cdot \nab{p}H\qpt + \partial_
 H\qpt.$$
 Zatem
 $$\dt H\qpt = \partial_t H\qpt.$$
-Stąd wynika, iż funkcja Hamiltona zmieniasię tak w czasie jak zależy od czasu.
+Stąd wynika, iż funkcja Hamiltona zmieniasię tak w czasie jak zależy od czasu.\\
+Jeżeli $H=H\qp$ to $\dt H\qp = 0$. Stąd wynika, że energia jest zachowana 
+wzdłuż trajektorii fazowej.
+\subsection{Nawiasy Poissona}
+\textbf{definicja}\\
+$f\qpt $, $g\qpt$ - funkcje klasy $C^1[\mu]$. Wtedy definiujemy 
+$$ \{ f,g \}= \nab{q} f\qpt \cdot \nab{p} g\qpt - \nab{p} f\qpt \cdot \nab{q}
+g\qpt = \left[ \begin{matrix} \nab{q} f\qpt & \nab{p}f\qpt  \end{matrix} \right]
+ \left[ \begin{matrix} 0 & 1 \\ -1 & 0 \end{matrix} \right] 
+ \left[ \begin{matrix} \nab{q} g\qpt \\ \nab{p} g\qpt \end{matrix} \right].$$
+\textbf{Pożytki:}
+\begin{enumerate}
+	\item łatwiej znaleźć niektóre całki ruchu $C\qp : \{ C\qp, H\qp \} =0$.
+	\item równania Hamiltona można zapisać następująco
+	\begin{equation}
+		\begin{cases}
+		\dt \vec{q} =  \{ \vec{q} , H\qpt \} \\
+		\dt \vec{p} =  \{ \vec{p} , H\qpt \} 
+		\end{cases}
+	\end{equation}
+\end{enumerate}
+\textbf{Przykłady}
+\begin{enumerate}
+	\item Niech $H\qp = \frac{p^2}{2m} + U(\vec{q})$
+	$$ \vec{v} (t) = \{ \vec{q} , \frac{p^2}{2m} + U(\vec{q}) \} = \{ \vec{q}
+	, \frac{p^2}{2m} \} + \overbrace{\{ \vec{q} , U(\vec{q}) \}}^{=0} = 
+	\nab{q}\vec{q} \cdot \nab{p} \frac{p^2}{2m} - \nab{p} \vec{q} \cdot 
+	\nab{q} \frac{p^2}{2m} = \frac{\vec{p}}{m}$$
+	$$\implies \vec{p}(t) = m \vec{v}(t).$$
+	\item Niech $H\qp = \frac{p^2}{2m} + U(\vec{q},\vec{p})$
+	$$ \vec{v}(t) = \{ \vec{q}, H\qp \} = \ldots = \frac{1}{m} \vec{p}(t)
+	+\nab{p} U\qp \implies \vec{p} (t) = m\vec{v}(t) - m\nab{p}U\qp$$
+	\item Rozważmy zaburzenie $H'\arg = \frac{q}{m} \vec{p}\cdot \vec{A}\arg=$
+	$$= q\vec{v} \cdot \vec{A}\arg = q \int d^3r'\delta(\vec{r}\ ' - 
+	\vec{r}(t)) \vec{v}(t)\cdot \vec{A} (\vec{r}\ ',t)=\int d^3r' \underbrace{
+	q \delta(\vec{r}\ ' - \vec{r}(t))}_{\rho (\vec{r}\ ',t)} \vec{v}(t)\cdot 
+	\vec{A}(\vec{r}\ '	, t ) =$$
+	$$= \int d^3r' \underbrace{\rho (\vec{r}\ ',t) \vec{v}(t)}_{\vec{j}
+	(\vec{r}\ ',t)} \cdot \vec{A}(\vec{r}\	 ' ,t) = \int d^3r \vec{j} 
+	(\vec{r}\ ',t)\cdot \vec{A} (\vec{r}\ ' ,t).$$
+	Przedstawiliśmy zaburzenia za pomocą pola elektrycznego.
+\end{enumerate}
+
