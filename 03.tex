@@ -63,3 +63,71 @@ Funkcja Hamiltona przybiera wartość całkowitej energii mechanicznej układu, 
 siły sziałające na układ są potencjalne, a potencjał nie zależy od czasu.
 $$ H\qp = \underbrace{J(\vec{q},\dot{\vec{q}}(\vec{q},\vec{p}))}_{\mbox{
 część kinetyczna}} + \underbrace{U(\vec{q})}_{\mbox{część potencjalna}}.$$
+$q,p$ - współrzędne i pędy uogólnione, zgodne z więzami skleronomicznymi, czyli takimi, że nie zależą jawnie od czasu.
+\subsubsection{Przestrzeń fazowa $\mu$}
+\textbf{Definicja}\\
+Przestrzenią fazowa $\mu$ układu mechanicznego nazywamy parzysto-wymiarową 
+przestrzeń symplektyczną, której elementami są punkty fazowe o współrzędnych 
+$\qp$, które reprezentują stany klasyczne układu.
+$$ H\qpt = J(\vec{q},\dot{\vec{q}}\qp)+U\qpt $$
+$$ H:\mu \times \mathbb{R} \to \mathbb{R}, \quad \mbox{kl. } C^1[\mu]. $$
+\textbf{Przykład}\\
+$$ \vec{F}_L \arg = q[\E+\v (t)\times\B]$$
+$$ \phi (\vec{r},\vec{v},t) = q[ \underbrace{V\arg}_{\mbox{pot. skalarny}}
+-\v (t) \cdot \underbrace{\vec{A} \arg }_{\mbox{pot. wektorowy}}]. $$
+Poprzez transformatę Legendre'a
+$$H(\vec{r},\vec{p}) = \underbrace{\frac{1}{2m} [\vec{p}+q\vec{A}\arg ]^2}_{\mbox{
+część kinetyczna}} + \underbrace{U\arg}_{\mbox{część potencjalna}}.$$
+\subsubsection{Funkcja Hamiltona w przybliżeniu minimalnego sprzężenia 
+eletromagnetycznego}
+$$H(\vec{r},\vec{p}) = \frac{1}{2m} [\vec{p}+q\vec{A}\arg ]\cdot[\vec{p}+
+q\vec{A}\arg ] + U\arg= \frac{p^2}{2m} + U\arg + \frac{q}{m}\vec{p}\cdot\vec{A}\arg
++\frac{q^2}{2m}A^2\arg \approx$$
+$$\approx \big| \mbox{linearyzacja, zakładając, że A jest małe} \big| \approx
+\underbrace{\frac{p^2}{2m} + U\arg}_{H_0\rpt} + \frac{q}{m} \vec{p} \cdot \vec{A}
+\arg,$$
+gdzie $H_0\rpt$ to niezaburzona funkcja Hamiltona, a pozostały składnik jest 
+zaburzeniem liniowym spowodowanym potencjałem wektorowym $\vec{A}$.
+\subsubsection{Kanoniczne równania Hamiltona}
+\begin{equation}
+\begin{cases}
+	\dot{\vec{q}} (t) = \nab{p} H\qpt \\
+	\dot{\vec{p}} (t) = - \nab{q} H\qpt 
+\end{cases} +
+\begin{cases}
+	\vec{q}(t_0) = \vec{q}_0 \\
+	\vec{p}(t_0) = \vec{p}_0
+\end{cases}
+\end{equation}
+$$\begin{cases} 
+	\vec{q}(t) = \vec{q}(t_0) + \int_{t_0}^t dt' \nab{p} H(\vec{q},\vec{p},t') \\
+	\vec{p}(t) = \vec{p}(t_0) + \int_{t_0}^t dt' \nab{q} H(\vec{q},\vec{p},t').
+\end{cases}$$
+Rozwiazanie powyższe wyznacza trajektorię fazową w przestrzni fazowej, 
+która to jest zbiorem klasycznych stanów realizowanych przez układ 
+w kolejnych chwilach czasu $t$.\\
+\textbf{Inna forma równań Hamiltona}\\
+Wprowadzamy wektor fazowy $ \vec{w}\qp $ oraz hamiltonowskie pole wektorowe
+$\vec{X}_H \qpt$. Wtedy
+\begin{equation} \dt \vec{w}\qp = \vec{X}_H \qpt \end{equation}
+\begin{equation} \dt 
+\left[ \begin{matrix} \vec{q}(t) \\ \vec{p}(t)  \end{matrix} \right] 
+= \underbrace{\left[ \begin{matrix} 0 & 1 \\ -1 & 0  \end{matrix} \right]}_{g}
+\left[ \begin{matrix} \nab{q}H\qpt \\ \nab{p}H\qpt \end{matrix} \right]
+,\end{equation}
+gdzie $g$ to anysymetryczny tensor metryczny, który określa geomerię symplektyczną
+przestreni fazowej.
+\subsubsection{Zależność funkcji Hamitona od czasu}
+$H\qpt$ może się zmieniać w czasie na dwa sposoby
+\begin{enumerate}
+	\item $\vec{q} = \vec{q}(t),\ \vec{p} = \vec{p}(t),$
+	\item $t$ (jawnie)
+\end{enumerate}
+$$\dt H\qpt =\left[ \dt \vec{q}(t) \right]\cdot \nab{q} H\qpt +
+\left[ \dt \vec{p}(t)\right] \cdot \nab{p} H\qpt + \partial_t H\qpt =
+$$
+$$=\nab{p}H\qpt \cdot \nab{q}H\qpt - \nab{q}H\qpt \cdot \nab{p}H\qpt + \partial_t
+H\qpt.$$
+Zatem
+$$\dt H\qpt = \partial_t H\qpt.$$
+Stąd wynika, iż funkcja Hamiltona zmieniasię tak w czasie jak zależy od czasu.
