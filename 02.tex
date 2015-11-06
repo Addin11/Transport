@@ -57,7 +57,7 @@ Wzór (\ref{zl2}) to prawo zachowania ładunku - ładunek nie może zniknąć, m
 \item{Wyprowadzenie praw zachowania ładunku z praw Maxwella}\\
 Zadziałajmy obustronnie $\partial_t$ na 1. równanie Maxwella (\ref{r1}) oraz $\nabla\cdot$ na 2. równanie Maxwella (\ref{r2}):
 \begin{equation}
-(1)~~\Rightarrow ~~\partial_t \nabla\cdot \vec{D}\arg=\delta_t \rho(\r,t) ~~\Rightarrow~~ \nabla\cdot[\partial_t\vec{D}\arg=\partial_t\rho\arg \end{equation}
+(1)~~\Rightarrow ~~\partial_t \nabla\cdot \vec{D}\arg=\partial_t \rho(\r,t) ~~\Rightarrow~~ \nabla\cdot \partial_t\vec{D}\arg=\partial_t\rho\arg \end{equation}
  \begin{equation}
  (2)~~\Rightarrow~~ \underbrace{\nabla\cdot[\nabla\times\vec{H}\arg]}_{=0 \text{ (bo jest to div z rot)}}-\nabla\cdot\partial_t\vec{D}\arg=\nabla\cdot\vec{J}\arg
 \end{equation}
@@ -145,13 +145,13 @@ Można zatem postawić:
 \begin{equation} \vec{Y}[\alpha_1\vec{X}_1 + \alpha_2\vec{X}_2]=\alpha_1 \vec{Y}[\vec{X}_1] + \alpha_2 \vec{Y}[\vec{X}_2] \end{equation}
 \textbf{uw.} Jeśli uciąglimy tę sumę, dostaniemy całkę.
 \item Równania materiałowe pozostają słuszne, jeśli pola pierwotne można traktować jako słabe zaburzenia. Wówczas można rozwinąć w szereg McLaurina:
-\begin{equation}\vec{Y}[\vec{X}]=\vec{Y}[\vec{0}]+ \frac{\delta\vec{Y}}{\delta\vec{X}}|_{\vec{0}}\vec{X} + \frac{1}{2}\frac{\delta^2 \vec{Y}}{\delta\vec{X}^2}|_{\vec{0}}\vec{X}^2 + ...\end{equation}
+\begin{equation}\vec{Y}[\vec{X}]=\vec{Y}[\vec{0}]+ \frac{\delta\vec{Y}}{\delta\vec{X}}_{\Big|_{\vec{0}}}\vec{X} + \frac{1}{2}\frac{\delta^2 \vec{Y}}{\delta\vec{X}^2}_{\Big|_{\vec{0}}}\vec{X}^2 + ...\end{equation}
 gdzie: $\vec{Y}[\vec{0}]=0$ (bo nie może istnieć pole wtórne bez pierwotnego), zatem:
-\begin{equation}[\vec{X}]=\vec{Y}[\vec{0}]+ \frac{\delta\vec{Y}}{\delta\vec{X}}|_{\vec{0}}\vec{X} + \mathcal{O}(\vec{X}^2)\end{equation}
+\begin{equation}[\vec{X}]=\vec{Y}[\vec{0}]+ \frac{\delta\vec{Y}}{\delta\vec{X}}_{\Big|_{\vec{0}}}\vec{X} + \mathcal{O}(\vec{X}^2)\end{equation}
 \end{enumerate}
 \textbf{Założenie:}\begin{verse} 
 Załóżmy, że pola wtórne są proporcjonalne do pól pierwotnych (tzw. linearyzacja równania). Wówczas:
-\begin{equation}\vec{Y}[{\vec{X}}] \simeq \frac{\delta\vec{Y}}{\delta\vec{X}}|_{\vec{0}} \vec{X} = \hat{\mathcal{L}}\vec{X}\end{equation} \end{verse}
+\begin{equation}\vec{Y}[{\vec{X}}] \simeq \frac{\delta\vec{Y}}{\delta\vec{X}}_{\Big|_{\vec{0}}} \vec{X} = \hat{\mathcal{L}}\vec{X}\end{equation} \end{verse}
 Ostatecznie więc:
 \begin{equation}\vec{Y}[{\vec{X}}] = \hat{\mathcal{L}}\vec{X} \label{RFen} \end{equation}
 To przybliżenie nazywamy \textbf{teorią liniowej odpowiedzi}, zaś samo równanie (\ref{RFen}) - równaniem fenomenologicznym, a współczynniki $\hat{\mathcal{L}}$ - współczynnikami fenomenologicznymi. Współczynniki te dostajemy z doświadczeń i następnie staramy się je wyjaśnić za pomocą teorii.
