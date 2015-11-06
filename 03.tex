@@ -1,6 +1,6 @@
 \section{Metody opisu klasycznej dynamiki cząstek}
 W rozważaniach opuszczamy mechanikę Lagrangowską. 
-\subsection{Mechanika Newtonowska}
+\subsection{Mechanika newtonowska}
 \textbf{Siła Lorenza}
 \begin{equation}\label{sila_lorenza}
 	\vec{F}_l \arg = q [ \vec{E} \arg+\vec{v}(t)\times\vec{B}\arg].
@@ -25,8 +25,41 @@ $\equiv$ PRZESTRZEŃ KONFIGURACYJNA.
 RYSUNEK
 
 
-$\left|\vec{r}(t)\right> $ - klasyczny stan cząstki 
+$\left|\vec{r}(t)\right> $ - klasyczny stan cząstki w mechanice Newtona 
+niewystarczający ze względu na brak determinizmu.
 
+Stan cząstki opisany w spsób (trik dodający determinizm) $$\left| \vec{r}(t)
+,\vec{v}(t) \right> \mbox{ - klasyczny stan cząstki}$$
+$$
+\begin{cases} 
+	\dt \vec{r}(t)=\vec{v}(t) &\\
+	m\dt \vec{v}(t)=\vec{F}(\vec{r},t)
+\end{cases} + \mbox{war. początkowe (jednopunktowe)} 
+\begin{cases}
+	\vec{r}(t_0)=\vec{r}_0
+	\vec{v}(t_0)=\vec{v}_0
+\end{cases}
+$$
+\textbf{Uwaga}\\
+Możemy określić $\vec{r}$ w chwili $t$, ale $\vec{v}$ okreśamy w otoczeniu $t$,
+bo
+$$\vec{v}_0 = \vec{v}(t_0) = \dt \vec{r}_{\Big|_{t=t_0}} = \lim_{\Delta t \to 0}
+\frac{\vec{r}(t_0+\Delta t)-\vec{r}(t_0)}{\Delta t},$$
+ewentualnie
+$$\vec{v}_0 = \vec{v}(t_0) = \dt \vec{r}_{\Big|_{t=t_0}} = \lim_{\Delta t \to 0}
+\frac{\vec{r}(t_0)-\vec{r}(t_0-\Delta t)}{\Delta t}.$$
+\textbf{Wniosek}\\
+Trikiem Tym uzyskujemy determinizm, z wyjątkiem infinitezymalnych zmian.
 
-\subsection{Mechanika Hamiltonowska}
+\subsection{Mechanika hamiltonowska}
+W mechanice hamiltonowskiej nie używamy pojęcia siły, ale pojęcia potencjału,
+co oznacza, że jest ona mniej ogólna.\\
 
+\textbf{formalizm kanoniczny}\\
+Funkcja Hamiltona: $ H\qpt$. Kosztem straty na ogólności, zyskujemy 
+niezależność zmiennych uogólnionych $\vec{q}$ i $\vec{p}$.\\
+$$ \left| \vec{q}(t), \vec{p}(t) \right> \mbox{ - klasyczny stan układu.} $$
+Funkcja Hamiltona przybiera wartość całkowitej energii mechanicznej układu, jeżeli
+siły sziałające na układ są potencjalne, a potencjał nie zależy od czasu.
+$$ H\qp = \underbrace{J(\vec{q},\dot{\vec{q}}(\vec{q},\vec{p}))}_{\mbox{
+część kinetyczna}} + \underbrace{U(\vec{q})}_{\mbox{część potencjalna}}.$$
