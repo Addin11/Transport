@@ -98,7 +98,8 @@ $$\begin{cases}
 \vec{v}(t) \nab{r} \rpt + \vec{F}(\vec{r}) \nab{p}f\rpt +\partial_t f\rpt =0&\\
 \nabla \vec{E} \arg = \left< \rho \arg \right>  \qquad \leftarrow \mbox{z uśrednieina teorii Lorenza}.& 
 \end{cases}$$
-Zakładane oddziaływania są zderzeniami. Zakładamy, że zderzenia są:
+\subsubsection{Równanie Boltzmana}
+Zakładamy teraz, że oddziaływania są zderzeniami. Zakładamy, że zderzenia są:
 \begin{enumerate}
 \item elastyczne i mają charakter podwójny (binarny)
 \item kontaktowe, a w ich wyniku występuje jedynie zmiana pędu\\
@@ -131,5 +132,39 @@ gdzie $\sigma$ - przekrój czynny.
 \end{figure}
 $$\dfrac{d}{dt} f\rpt \neq 0 \quad \leftarrow \mbox{dla zderzeń}$$
 $$\dfrac{d}{dt} f\rpt = I[f\rpt]\quad \leftarrow \mbox{całka zderzeń}$$
+Podczas zderzeń muszą być spełnione zasady zachowania:
+\begin{itemize}
+\item z zasady zachowania cząstek: $\int d^3p I[f\rpt] = 0$
+\item z zasady zachowania pędu: $\int d^3p \vec{p}I[f\rpt] = 0$
+\item z zadady zachowania energii: $\int d^3p E(p) I[f\rpt]=0.$
+\end{itemize}
+\textbf{Równanie bolzmana ma postać:}
+$$
+\vec{v}(t) \nab{r} \rpt + \vec{F}(\vec{r}) \nab{p}f\rpt +\partial_t f\rpt =I[ f\rpt ]
+$$
+\textbf{Problem Boltzmana-Poissona}
+$$
+\vec{v}(t) \nab{r} \rpt + [q(\vec{E}\arg +\vec{v}(t)\times \vec{B}\arg)](\vec{r}) \nab{p}f\rpt +\partial_t f\rpt =I[ f\rpt ]
+$$
+Załużmy, że nie ma pól zewnętrznych ($\vec{F}=\vec{0}$). Wtedy
+$$\partial_t f\rpt + \vec{v}\nab{r}f\rpt = I[f\rpt] \qquad / \int d^3p$$
+Korzystamy z równości:\\
+$n\arg = \int d^3p f\rpt$\\
+$\vec{j}\arg = \int d^3 p \vec{v}(\vec{p})f\rpt$
+$$\partial_t n\arg + \nab{r} \vec{j}\arg = \int d^3p I [f\rpt] = 0$$
+$$\partial_t n\arg + \nab{r} \vec{j}\arg = 0 .$$
+Z prawa Ficka $ \vec{j}\arg = -D\arg \nab{r}n\arg$, zatem 
+$$\partial_t n\arg = \nab{r} [D\arg \nab{r} n\arg ] \quad \leftarrow \mbox{przybliżenie ośrodka homogenicznego}$$
+$$\partial_t n\arg = D\nab{r}^2n\arg \quad \leftarrow \mbox{przybliżenie dyfuzyjne.}$$
 \subsection{Zespoły statysyczne i przestrzeń fazowa $\Gamma$}
-
+$\Gamma$ - przestrzeń fazowa, $\dim [\Gamma]=6N$. Układ jest w niej reprezentowany przez jeden punkt 
+$$(\vec{r}_1,\vec{r_2},\ldots,\vec{r}_N,\vec{p}_1,\vec{p}_2,\ldots,\vec{p}_N) \in \Gamma . $$
+Zespołem statystycznym nazywamy zbiór identycznych nieoddziałujących układów podlegających tym samym warunkom
+zewnętrznym, lecz istniejąych w różnych mikrostanach
+$$\rho\ripi d^{3N}rd^{3N}p, \qquad  d^{3N} r d^{3N} p = d^{3N}\gamma$$
+$$ \mbox{gestość prawdopodobiestwa} = \dfrac{\rho\ripi}{\int d^{3N}\gamma \rho \ripi}.$$
+Można wyliczać średnią po zespołach
+$$\ave{A} = \dfrac{\int d^{3N}\gamma A\ripi \rho\ripi}{\int d^{3N}\gamma \rho\ripi}.$$
+\subsubsection{Twierdzenie Liouville'a}
+Przepływ fazowy układu hamiltonowskiego zachowuje objętość. Inaczej zbiór punktów fazowych 
+zamkniętych w pewnej objętości fazowej porusza się jak nieściśliwa ciecz.
