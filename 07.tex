@@ -21,7 +21,7 @@ To powoduje, że gaz ten nie jest już klasyczny. Jest to tzw. gaz zdegenerowany
 \begin{itemize}
 \item Stan układu
 Klasyczny stan układu jest określony przez:
-\begin{equation} \left.|\r,\p\right>z\end{equation}
+\begin{equation} \left.|\r,\p\right>\end{equation}
 Kwantowy stan układu jest określony przez:
 \begin{equation} \left.|\Psi\right>\end{equation}
 \item Pęd jako liczba kwantowa
@@ -59,7 +59,7 @@ Skoro k jest dyskretne, to również E jest dyskretne. Oznacza to, że energia j
 1) W niskich temperaturach:
 \begin{equation}\lim\limits_{T \to 0}f_{FD}(\Ep)=\theta(\Ep-\mu)= \begin{cases} 1~~\text{dla}~\Ep < \mu \\ 0~~\text{dla}~\Ep >\mu\end{cases}\end{equation}
 gdzie $\theta$ to funkcja schodkowa Heavi-Side'a.\\
-2) W wysokich temperaturach rzędu $|E-\mu|>>k_BT$:
+2) W wysokich temperaturach rzędu $|E-\mu|\gg k_BT$:
 \begin{equation}\lim\limits_{\frac{|E-\mu|}{k_BT}\rightarrow\infty} f_{FD}(\Ep)=e^{-\frac{\Ep-\mu}{k_BT}}=f_B(\Ep)\end{equation}
 gdzie $f_B$ to rozkład Boltzmanna.\\
 3) W punkcie $\Ep=\mu$:
@@ -153,7 +153,7 @@ Stąd:
 \begin{equation}\underbrace{f(\p)}_{\text{funkcja nierównowagowa}} =\underbrace{f_0(\p)}_{\text{funkcja równowagowa}} +\underbrace{e\tau(\p)E\cdot\nabla_{p}f(\p)}_{\delta f}\label{f.nierownowagowa}\end{equation}
 gdzie:\\
 $\delta f$ to odchylenie od stanu równowagowego (bo $\nabla_{p}f$). Zakładamy, że zaburzenie to jest niewielkie:
-\begin{equation}f_0(\p)>>\delta f(\p)\end{equation}
+\begin{equation}f_0(\p)\gg\delta f(\p)\end{equation}
 Powyższe równanie ma postać rozwinięcia w szereg Taylora do 1. wyrazu
 \item Wniosek:\\
 Jeśli przyłożymy małe pole $\E$, to obowiązuje przybliżenie czasu urojonego i funkcję rozkładu rozwija się w szereg Taylora do 1. wyrazu (bo wychylenie jest niewielkie).\\
