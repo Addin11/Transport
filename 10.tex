@@ -1,0 +1,171 @@
+\section{Dynamika kwantowa w przestrzeni fazowej I- Konstrukcja kwantowej funkcji rozkładu w przestrzeni fazowej}
+Oddziaływanie układu z otoczeniem skutkuje uciekaniem/przybywaniem energii z/do układu, np. przepuszczanie prądu przez układ skutkuje wydzieleniem ciepła; lub: ruch elektronów w sieci krystalicznej powoduje drgania tej sieci i wtedy gaz elektronowy i gaz fononowy zaczynają oddziaływać ze sobą.\\
+Jak opisać taki problem? Rozwiązaniem jest statystyczne potraktowanie problemu.
+\subsection{Statystyczne definicje w przestrzeni fazowej}
+\subsubsection{operator gęstości} (inna nazwa: operator statystyczny) $\hat{\varrho}(t)$:
+\begin{equation}\hat{\varrho}(t)=\sum_i \varrho_i \hat{P}_{\psi_i}(t)=
+\sum_i \varrho_i|\psi_i(t)\rangle\langle\psi_i(t)|\end{equation}
+przy czym:
+\begin{equation}\sum_i\varrho_i=1\end{equation}
+\subsubsection{Macierz gęstości} to operator statystyczny (operator gęstości) zapisany w odpowiedniej reprezentacji.\\
+Niech $\alpha$ będzie zmienną ciągłą mającą własność:
+\begin{itemize}
+\item[1.] ortonormalności:
+\begin{equation}\langle\alpha|\alpha'\rangle=\delta (\alpha-\alpha')\end{equation}
+\item[2.] zupełności
+\begin{equation}\int d\alpha|\alpha\rangle\langle\alpha|=\mathds{1}
+\end{equation}
+\end{itemize}
+zatem stany $|\alpha\rangle$ tworzą bazę ortonormalną.\\
+Wówczas macierz w reprezentacji $\alpha$ ma postać:
+\begin{equation}\varrho(\alpha',\alpha,t)\equiv\langle\alpha'|\hat{\varrho}|\alpha\rangle=
+\nonumber\end{equation}
+\begin{equation}=\varrho(\alpha',\alpha,t)=
+\langle\alpha'|{\scriptstyle{\sum_i}}|\psi_i(t)\rangle\varrho_i\langle\psi_i(t)|\alpha\rangle=\sum_i\varrho_i\langle\alpha'|\psi_i(t)\rangle\langle\psi_i(t)|\alpha\rangle=\nonumber\end{equation}
+\begin{equation}
+=\sum_i\varrho_i\psi_i(\alpha')\psi_i^*(\alpha)
+\end{equation}
+Podsumowując, w reprezentacji $\alpha$ macierz gęstości ma postać:
+\begin{equation}\varrho(\alpha',\alpha,t)=\sum_i\varrho_i\psi_i(\alpha')\psi_i^*(\alpha)
+\end{equation}
+\subsection{Macierz gęstości w reprezentacji położeniowej i pędowej}
+Niech $\alpha=\r$ lub $\alpha=\p$. Wówczas:
+\begin{itemize}
+\item macierz gęstości w reprezentacji położeniowej:
+\begin{equation}\varrho(\r\,',r)=\sum_i\varrho_i\psi_i^*(\r)\psi_i(\r\,')
+\end{equation}
+\item macierz gęstości w reprezentacji pędowej:
+\begin{equation}\varrho(\p\,',\p)=\sum_i\varrho_i\psi_i^*(\p)\psi_i(\p)\end{equation}
+\end{itemize}
+My jednak wiemy, że gęstość prawdopodobieństwa zależy od położenia $\r$ i pędu $\p$ jednocześnie. Jak zrealizować to "rozkroczenie" bazy? Najpierw nauczmy się przechodzić między obiema reprezentacjami.
+\begin{itemize}
+\item[1.] przejście $\r\rightarrow\p$ i  $\p\rightarrow\r$\\
+Przejście $\r\rightarrow\p$ dla dowolnej funkcji $\psi$ to transformata Fouriera:
+\begin{equation}\psi(\r,t)=\frac{1}{(2\pi\hbar)^3}\int d^3p\psi(\p,t)e^{\frac{i}{\hbar}\p\cdot\r}\end{equation}
+a przejście $\p\rightarrow\r$ to odwrotna transformata Fouriera:
+\begin{equation}\psi(\p,t)=\int d^3r\psi(\r,t)e^{-\frac{i}{\hbar}\p\cdot\r}
+\end{equation}
+\item[2.] przejście $\varrho(\p\,',\p,t)\rightarrow\varrho(\r\,',\r,t)$\\
+Wykonajmy rachunek:
+\begin{equation}\varrho(\p\,',\p,t)=\langle\p\,'|\hat{\varrho}(t)|\p\rangle\end{equation}
+\begin{equation}\varrho(\p\,',\p,t)=\langle\p\,'|\mathds{1}\hat{\varrho}(t)\mathds{1}|\p\rangle
+\end{equation}
+\begin{equation}
+\varrho(\p\,',\p,t)=\int d^3r'\int d^3r\langle\p\,'|\r\,'\rangle
+\langle \r\,'|\hat{\varrho}(t)|\r\,'\rangle\langle\r|\p\rangle
+\end{equation}
+gdzie skorzystaliśmy z zupełności bazy: $\mathds{1}=|\r\rangle\langle\r|$. Dalej:
+\begin{equation}
+\varrho(\p\,',\p,t)=\int d^3r'\int d^3r\langle\p\,'|\r\,'\rangle
+\varrho(\r\,',r,t)\langle\r|\p\rangle
+\end{equation}
+\begin{equation}
+\varrho(\p\,',\p,t)=\int d^3r'\int d^3r\, e^{-\frac{i}{\hbar}\p\,'\cdot\r\,'}\langle\p\,'|\r\,'\rangle
+\varrho(\r\,',r,t)\langle\r|\p\rangle e^{\frac{i}{\hbar}\p\cdot\r}
+\end{equation}
+\begin{equation}
+\varrho(\p\,',\p,t)=\int d^3r'\int d^3r\,\langle\p\,'|\r\,'\rangle
+\varrho(\r\,',r,t)\langle\r|\p\rangle e^{\frac{i}{\hbar}(\p\,'\cdot\r\,'-\r\cdot\p)}
+\end{equation}
+Wniosek: przejście  $\varrho(\p\,',\p,t)\rightarrow\varrho(\r\,',\r,t)$ to dwuwymiarowa transformata Fouriera.
+\end{itemize}
+\subsection{Interpretacja macierzy gęstości}
+\subsubsection{elementy diagonalne}
+\begin{equation}{\varrho}(\r,\r,t)=
+\sum_i \varrho_i\psi_i^*(\r)\psi_i(\r)=\sum_i \varrho_i|\psi_i(\r)|^2=n(\r)\end{equation}
+gdzie $n(\r)$ to rozkład gęstości elektronowej.\\
+Wniosek: Elementy diagonalne macierzy gęstości w reprezentacji położeniowej dostarczają informacji o rozkładzie gęstości prawdopodobieństwa znalezienia cząstki w chwili t w położeniu $\r$ w poszczególnych stanach.\\
+Analogicznie:
+\begin{equation}{\varrho}(\p,\p,t)=n(\p)\end{equation}
+gdzie $n(\p)$ to pędowy rozkład gęstości elektronowej.\\
+Są to informacje \underline{klasyczne}.
+\subsubsection{elementy pozadiagonalne}
+Zgodnie z transformacją Fouriera:
+\begin{equation}n(\r)={\varrho}(\r,\r,t)=\frac{1}{(2\pi\hbar)^3}\int d^3p\varrho(\p\,',p,t)e^{\frac{i}{\hbar}(\p\,'-\p)\cdot\r}
+\end{equation}
+zatem elementy pozadiagonalne macierzy gęstości w reprezentacji pędowej zawierają informacje o gęstości elektronowej $n(\r)$.\\
+Analogicznie: 
+\begin{equation}n(\p){\varrho}(\p,p,t)=\int d^3p\varrho(\r\,',\r,t)e^{-\frac{i}{\hbar}\p\cdot(\r\,'-\r)}
+\end{equation}
+elementy pozadiagonalne macierzy gęstości w reprezentacji położeniowej zawierają informacje o pędowej gęstości elektronowej $n(\p)$.\\
+\textbf{Wniosek}: Elementy pozadiagonalne macierzy gęstości  dają informacje o korelacji położenia i pędu.\\
+Zaczyna "pachnieć" zasadą nieokreśloności- ponieważ pod całkami występują iloczyny $\p$ i $\r$, to oznacza, że obu tych wielkości nie da się wyznaczyć jednocześnie. Tej informacji nie daje nam funkcja falowa.
+\subsection{Macierz gęstości w reprezentacji $\alpha$}
+Wartość oczekiwana zmiennej A jest równa śladowi macierzy:
+\begin{equation}\langle A(t)\rangle=Tr\lbrace\hat{A}\hat{\varrho}(t)\rbrace
+\end{equation}
+Ponieważ $\alpha$ jest zmienną ciągłą, to obecną w definicji śladu macierzy sumę zamieniamy na całkę:
+\begin{equation}\langle A(t)\rangle=\int d\alpha\langle\alpha|\hat{A}\hat{\varrho}(t)|\alpha\rangle\end{equation}
+i kontynuujemy rachunek, wykorzystując zupełność bazy: $\mathds{1}=|\alpha'\rangle\langle\alpha'|$.
+\begin{equation}\langle A(t)\rangle
+=\int d\alpha\langle\alpha|\hat{A}\mathds{1}\hat{\varrho}(t)|\alpha\rangle
+\end{equation}
+\begin{equation}\langle A(t)\rangle=
+\int d\alpha\int d\alpha'\langle\alpha|\hat{A}|\alpha'\rangle\langle\alpha'|\hat{\varrho}(t)|\alpha\rangle
+\end{equation}
+\begin{equation}\langle A(t)\rangle=
+\int d\alpha\int d\alpha'A(\alpha,\alpha')\varrho(\alpha',\alpha,t)
+\end{equation}
+Zakładamy, że operator $\hat{A}$ jest lokalny:
+\begin{equation}A(\alpha,\alpha'')=A(\alpha)\delta(\alpha-\alpha')
+\end{equation}
+Jest to tzw. przybliżenie lokalne. Wówczas:
+\begin{equation}\langle A(t)\rangle=
+\int d\alpha\int d\alpha'A(\alpha)\delta(\alpha-\alpha')\varrho(\alpha',\alpha,t)
+\end{equation}
+Z twierdzenia filtracyjnego dla delty Diraca:
+\begin{equation}\langle A(t)\rangle=
+\int d\alpha A(\alpha)\varrho(\alpha,\alpha,t)
+\end{equation}
+\begin{equation}\langle A(t)\rangle=
+\int d\alpha A(\alpha)n(\alpha,t)
+\end{equation}
+gdzie $n(\alpha,t)$ to gęstość elektronowa w reprezentacji $\alpha$.\\
+Zauważmy, że jeżeli $\hat{A}=\hat{mathds{1}}$, to:
+\begin{equation}\langle 1\rangle=\int d\alpha \varrho(\alpha,\alpha,t)=
+\int d^3\alpha\sum_i\varrho_i\psi^*(\alpha)\psi_i(\alpha)=\sum_i\varrho_i\int d^3\alpha\psi_i^*(\alpha)\psi_i(\alpha)=\sum_i\varrho_i\int d^3\alpha |\psi_i(\alpha)|^2=\sum_i \varrho_i
+\end{equation}
+zatem norma macierzy gęstości $\varrho$ jest indukowana normą funkcji falowej $\psi$.
+\subsection{Podsumowanie- porównanie ujęcia klasycznego i kwantowego}
+\begin{center}
+  \begin{tabular}{ccc}  
+    \toprule
+        &  funkcja rozkładu & macierz gęstości \\
+    \midrule
+    warunek unormowania & $\int d^3r\int d^3pf\rpt=1$ &  $\int d^3r\varrho(\r,\r)=1$\\\\
+  rozkład brzegowy & $n(\r,t)=\int d^3pf\rpt$ & $n(\r,t)=\sum_i\varrho_i\varrho(\r,\r,t)$\\\\
+  				  & $n(\p,t)=\int d^3rf\rpt$ & $n(\p,t)=\sum_i\varrho_i\varrho(\p,\p,t)$\\\\
+  wartość oczekiwana & $\langle A(t)\rangle=Tr\lbrace Af\rbrace=\int d^3r\int d^3pA(\r,\p)f\rpt$ & $\langle A(t)\rangle=Tr\lbrace \hat{A}\hat{\varrho}\rbrace=\int d\alpha A(\alpha)\varrho(\alpha,\alpha,t)$\\\\
+  równanie ruchu &$ \partial_tf\rpt=\lbrace\hat{H}(\r,\p),f\rpt\rbrace$ &
+ $ \frac{d}{dt}\hat{\varrho}(t)=\frac{1}{i\hbar}\Big[\hat{H},\hat{\varrho}(t)\Big]$\\\\
+    \bottomrule
+  \end{tabular}
+\end{center}
+\subsection{Wstęp do transformaty Wignera- wprowadzenie nowych zmiennych}
+Przestrzeń Hilberta to zupełna przestrzeń liniowa ze zdefiniowanym iloczynem skalarnym.\\
+Przestrzeń liniowa zawiera dodawanie wektorów, ale nie ich mnożenie (bo to wprowadzałoby działanie zewnętrzne- liczbę).\\
+W przestrzeni Hilberta abstrakcyjnymi wektorami sią liczby zespolone, których mnożenie daje liczbę zespoloną- temu przestrzeń Hilberta zawiera zarówno dodawanie jak i mnożenie.\\
+W 1932 roku Edward Wigner zastosował receptę Weyla w macierzy gęstości:
+\begin{equation}\varrho(\r\,',\r)=\langle\r\,'|\hat{p}(t)|\r\rangle\end{equation}
+Zakładając, że mamy stany czyste:
+\begin{equation}\varrho(\r\,',\r)=
+\langle\r\,'|\psi(t)\rangle\langle\psi(t)|\r\rangle\end{equation}
+\begin{equation}\varrho(\r\,',\r,t)=\psi(\r\,',t)psi^*(\r,t)\end{equation}
+Wigner zaproponował przejście do nowych zmiennych:
+\begin{equation}(\r\,',\r)\rightarrow(\R,\S)\end{equation}
+takich, że:
+\begin{equation}\R=\frac{1}{2}(\r\,'+\r)\end{equation}
+\begin{equation}\S=\r\,'-\r\end{equation}
+Zauważmy, że $\R$ to środek ciężkości, a $\S$ to względne położenie.
+Wigner wybrał akurat takie zmienne prawdopodobnie dlatego, że poszukiwał najprostszego rozwiązania.\\
+W tych zmiennych:
+\begin{equation}\r\,'=\R+\frac{1}{2}S\end{equation}
+\begin{equation}\r=\R-\frac{1}{2}S\end{equation}
+zatem:
+\begin{equation}\varrho(\r\,',\r,t)=\varrho\Big(\R+\frac{1}{2}\S,\R-\frac{1}{2}\S,t\Big)\end{equation}
+Zdefiniujmy funkcję pomocniczą:
+\begin{equation}
+W(\R,\vec{P})=\int d^3S\varrho\Big(\R+\frac{1}{2}\S,\R-\frac{1}{2}\S,t\Big)e^{-\frac{i}{\hbar}\vec{P}\cdot\S}
+\end{equation}
+jest to tzw. recepta Wayle'a.\\
+W tej recepcie również leży pewna intuicja- zauważmy, że $\S$ jest związane z odległością $\r-\r\,'$, a zatem również z prędkością, więc i z pędem- dlatego mnożymy ją przez $\vec{P}$, czyli pęd.
